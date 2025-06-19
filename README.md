@@ -43,6 +43,12 @@
   docker-compose up -d
 ```
 
+5. Reconstruit la base de datos con la semilla, ejecutar solo en desarrollo.
+
+```
+  http://localhost:3000/api/v2/seed
+```
+
 ## Stack Usado
 
 - MongoDB
