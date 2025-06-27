@@ -32,8 +32,14 @@ export class PokemonService {
       this.handleExceptions(error);
     }
   }
-  findAll() {
-    const pokemonDB = this.pokemonModel.find();
+  findAll(limit = 10, offset = 0) {
+    const pokemonDB = this.pokemonModel
+      .find()
+      .limit(limit)
+      .skip(offset)
+      .sort({ no: 1 })
+      .select('-__v');
+    // Para quitarle la linea de __v
     return pokemonDB;
   }
 
