@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api/v2');
-  app.useGlobalPipes(
+  (app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, //solo permite que puedas ver la data que especificaste en el dto, lo demás no llega
       forbidNonWhitelisted: true, //Indica todo lo que no esta en el dto como prohibido de enviar
@@ -16,6 +16,7 @@ async function bootstrap() {
       },
     }),
   ),
-    await app.listen(process.env.PORT ?? 3000);
+    await app.listen(process.env.PORT!));
+  console.log(`App running on Port ${process.env.PORT!}`);
 }
 bootstrap();

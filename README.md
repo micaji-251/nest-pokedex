@@ -43,7 +43,17 @@
   docker-compose up -d
 ```
 
-5. Reconstruit la base de datos con la semilla, ejecutar solo en desarrollo.
+5. Clonar el archivo **.env.template** y renombrar la copia a **.env**
+
+6. Llenar las palabras de entorno definidas
+
+7. Ejecutar la aplicación de desarrollo en dev:
+
+```
+  yarn start:dev
+```
+
+8. Reconstruit la base de datos con la semilla, ejecutar solo en desarrollo.
 
 ```
   http://localhost:3000/api/v2/seed
