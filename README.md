@@ -63,3 +63,17 @@
 
 - MongoDB
 - Nest
+
+# Production Build
+
+1. Crear el archivo y llenar las variables
+
+```
+  .env.prod
+```
+
+2. Crear la imagen
+
+```
+  docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
